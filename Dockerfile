@@ -1,5 +1,5 @@
 FROM kbase/sdkbase2:latest
-MAINTAINER KBase Developer
+LABEL maintainer="KBase Developer"
 # -----------------------------------------
 # In this section, you can install any system dependencies required
 # to run your App.  For instance, you could place an apt-get update or
@@ -36,7 +36,7 @@ COPY ./ /kb/module
 RUN mkdir -p /kb/module/work
 RUN chmod -R a+rw /kb/module
 
-WORKDIR /kb/module
+# WORKDIR /kb/module # Already defined on line 18?
 
 RUN make all
 
